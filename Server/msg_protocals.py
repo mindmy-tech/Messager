@@ -18,6 +18,7 @@ class Protocols:
             query = "SELECT user_id, message , msg_at FROM messages WHERE id > ? ORDER BY msg_at"
             value = self.db.execute(query, data["last_msg"])
             print(value)
+            return value
 
 
     def init_db(self):
