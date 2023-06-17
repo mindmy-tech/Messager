@@ -1,7 +1,7 @@
 import json
 import socket
 import threading
-import msg_protocals as protocol
+import msg_protocols 
 
 
 class Server_Init:
@@ -11,9 +11,10 @@ class Server_Init:
     """
     def __init__(self):
         self.sock = None
-        self.host = ""
+        self.host = "70.70.70.2"
         self.port = 7080
         self.clients_ = {}
+        self.protocol = msg_protocols.Protocols()
         self.startup_sequence()
 
     def startup_sequence(self):
@@ -55,9 +56,11 @@ class Server_Init:
                 data1 = json.loads(data.decode())
                 print(f"Received from {addr}: {data1}")
                 if data1['PROTOCOL'] == "POST":
-                    protocol.Protocols.post_protocol(data1)
+                    self.protocol.post_protocol(data1)
+                    print(data1)
                 elif data1['PROTOCOL'] == "GET":
-                    message_data = protocol.Protocols.get_protocol(data1)
+                    message_data = self.protocol.get_protocol(data1)
+                    print(data1)
                     json_file = json.dumps(message_data).encode()
                     conn.send(json_file)
                 else:

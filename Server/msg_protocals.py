@@ -6,12 +6,18 @@ from cs50 import SQL as sql
 class Protocols:
 
     def __init__(self):
-        self.db = sql("sqlite:///messages.db")
+        try :
+            self.db = sql("sqlite:///messages.db")
+        except:
+            open("messages.db", 'w')
+            self.db = sql("sqlite:///messages.db")
+
+        self.init_db()
 
     def post_protocol(self, data):
         if data:
             query = " INSERT INTO messages(user_id, message ) values(?, ?)"
-            self.db.execute(query, '420', 'testing' )
+            self.db.execute(query, data["USERNAME"], data["MESSAGE"] )
 
     def get_protocol(self, data):
         if data:
@@ -53,7 +59,3 @@ class Protocols:
             self.db.execute(query)
 
 
-
-pro = Protocols()
-
-pro.init_db()
