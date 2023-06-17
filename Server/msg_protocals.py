@@ -36,15 +36,37 @@ class Protocols:
     #         print("error")
 
     def init_db(self):
-        query = """CREATE TABLE IF NOT EXISTS users (
-        id INTEGER PRIMARY KEY,
+
+        #  Users table
+        #  to handle users data 
+        query1 = """
+        CREATE TABLE IF NOT EXISTS users (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
         name TEXT NOT NULL,
         email TEXT UNIQUE NOT NULL,
         password TEXT NOT NULL,
         created_at DATETIME DEFAULT CURRENT_TIMESTAMP
         );
+
         """
-        self.db.execute(query)
+        query2 ="CREATE INDEX IF NOT EXISTS idx_users_name ON users (name);"
+
+
+        #  store messages 
+
+        query3 ="""CREATE TABLE IF NOT EXISTS messages (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        user_id INTEGER NOT NULL,
+        message TEXT NOT NULL,
+        msg_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        );
+        """
+        querys = [query1, query2, query3]
+
+        for query in querys:
+            self.db.execute(query)
+
+
 
 pro = Protocols()
 
