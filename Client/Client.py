@@ -3,9 +3,9 @@ import json
 
 
 class Connect_Init:
-    def __init__(self):
+    def __init__(self, ip):
         self.sock = None
-        self.host_ip = "70.70.70.2"
+        self.host_ip = ip
         self.port = 7080
         self.connect()
 

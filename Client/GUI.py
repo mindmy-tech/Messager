@@ -164,8 +164,6 @@ class Window(QMainWindow):
             if len(msg) > 50:
                 label_2.setWordWrap(True)
 
-            
-
             horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
             horizontalLayout.addItem(horizontalSpacer)
