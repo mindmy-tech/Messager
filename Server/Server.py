@@ -1,21 +1,29 @@
 import json
 import socket
 import threading
-import msg_protocals as protocol
+import msg_protocols 
 
 
 class Server_Init:
+    """
+    main server code 
+    socket 
+    """
     def __init__(self):
         self.sock = None
-        self.ip = "localhost"
+        self.host = ""
         self.port = 7080
         self.clients_ = {}
+        self.protocol = msg_protocols.Protocols()
         self.startup_sequence()
 
     def startup_sequence(self):
+        """
+        Init server code
+        """
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        self.sock.bind((self.ip, self.port))
-        print(f'server up @{self.ip}:{self.port}')
+        self.sock.bind((self.host, self.port))
+        print(f'server up @{self.host}:{self.port}')
 
         self.sock.listen()
         # Waiting for connections
@@ -27,10 +35,16 @@ class Server_Init:
 
     @staticmethod
     def welcome_msg(conn, addr):
+        """
+        send a welcome message
+        """
         conn.send("welcome".encode())
         print(f'{addr} has connected and welcome msg is sent')
 
     def listen_msg(self, conn, addr):
+        """
+        waithing for message
+        """
         while True:
             try:
                 data = conn.recv(1024)
@@ -42,9 +56,11 @@ class Server_Init:
                 data1 = json.loads(data.decode())
                 print(f"Received from {addr}: {data1}")
                 if data1['PROTOCOL'] == "POST":
-                    protocol.Protocols.post_protocol(data1)
+                    self.protocol.post_protocol(data1)
+                    print(data1)
                 elif data1['PROTOCOL'] == "GET":
-                    message_data = protocol.Protocols.get_protocol(data1)
+                    message_data = self.protocol.get_protocol(data1)
+                    print(data1)
                     json_file = json.dumps(message_data).encode()
                     conn.send(json_file)
                 else:

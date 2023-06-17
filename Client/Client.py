@@ -3,9 +3,9 @@ import json
 
 
 class Connect_Init:
-    def __init__(self):
+    def __init__(self, ip):
         self.sock = None
-        self.host_ip = "localhost"
+        self.host_ip = ip
         self.port = 7080
         self.connect()
 
@@ -24,19 +24,17 @@ class Connect_Init:
         json_file = json.dumps(msg).encode()
         self.sock.send(json_file)
 
-    def Frame_POST(self, USER_ID, USERNAME, CHATROOM, MESSAGE):
+    def Frame_POST(self, USER_ID, USERNAME, MESSAGE):
         data = {'PROTOCOL': "POST",
                 'USER_ID': int(USER_ID),
                 'USERNAME': USERNAME,
-                'CHATROOM': CHATROOM,
                 "MESSAGE": MESSAGE}
         print(data)
         self.send_msg(data)
 
-    def Frame_GET(self,  USER_ID, USERNAME, CHATROOM, L_RECORD=0):
+    def Frame_GET(self,  USER_ID, USERNAME, L_RECORD=0):
         data = {'PROTOCOL': "POST",
                 'USER_ID': int(USER_ID),
                 'USERNAME': USERNAME,
-                'CHATROOM': CHATROOM,
                 "L_RECORD": L_RECORD}
         self.send_msg(data)
