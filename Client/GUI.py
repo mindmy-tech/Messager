@@ -37,7 +37,7 @@ class Window(QMainWindow):
         self.thread = None
 
         # Loads .ui file
-        uic.loadUi('UI\\Editing.ui', self)
+        uic.loadUi('UI\\messager_v2.ui', self)
 
         # gets the widgets from file to modify the widget
         self.scroll_area = self.findChild(QScrollArea, "scrollArea")
