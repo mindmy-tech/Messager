@@ -1,5 +1,3 @@
-# import mysql.connector as sql
-
 from cs50 import SQL as sql
 
 
@@ -57,5 +55,4 @@ class Protocols:
 
         for query in querys:
             self.db.execute(query)
-
 

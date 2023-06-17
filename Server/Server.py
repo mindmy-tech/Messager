@@ -11,7 +11,7 @@ class Server_Init:
     """
     def __init__(self):
         self.sock = None
-        self.host = ""
+        self.host = "70.70.70.2"
         self.port = 7080
         self.clients_ = {}
         self.protocol = msg_protocols.Protocols()
