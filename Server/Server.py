@@ -5,17 +5,24 @@ import msg_protocals as protocol
 
 
 class Server_Init:
+    """
+    main server code 
+    socket 
+    """
     def __init__(self):
         self.sock = None
-        self.ip = "localhost"
+        self.host = ""
         self.port = 7080
         self.clients_ = {}
         self.startup_sequence()
 
     def startup_sequence(self):
+        """
+        Init server code
+        """
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        self.sock.bind((self.ip, self.port))
-        print(f'server up @{self.ip}:{self.port}')
+        self.sock.bind((self.host, self.port))
+        print(f'server up @{self.host}:{self.port}')
 
         self.sock.listen()
         # Waiting for connections
@@ -27,10 +34,16 @@ class Server_Init:
 
     @staticmethod
     def welcome_msg(conn, addr):
+        """
+        send a welcome message
+        """
         conn.send("welcome".encode())
         print(f'{addr} has connected and welcome msg is sent')
 
     def listen_msg(self, conn, addr):
+        """
+        waithing for message
+        """
         while True:
             try:
                 data = conn.recv(1024)

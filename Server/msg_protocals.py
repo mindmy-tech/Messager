@@ -1,7 +1,13 @@
-import mysql.connector as sql
+# import mysql.connector as sql
+
+from cs50 import SQL as sql
 
 
 class Protocols:
+
+    def __init__(self):
+        self.db = sql("sqlite:///messages.db")
+
     @staticmethod
     def post_protocol(data):
         conn = sql.connect(host="localhost", user='root', password='root', database='test')
@@ -28,3 +34,16 @@ class Protocols:
             return data
         else:
             print("error")
+
+    @staticmethod
+    def init_db(self):
+        query = """CREATE TABLE IF NOT EXISTS users (
+        id INTEGER PRIMARY KEY,
+        name TEXT NOT NULL,
+        email TEXT UNIQUE NOT NULL,
+        password TEXT NOT NULL,
+        created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+        );
+        """
+        self.db.execute(query)
+
