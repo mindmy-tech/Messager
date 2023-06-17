@@ -47,7 +47,7 @@ class Window(QMainWindow):
         self.scroll_area = self.findChild(QScrollArea, "scrollArea")
         self.username_ = self.findChild(QLineEdit, "lineEdit_2")
         self.user_id_ = self.findChild(QLineEdit, "lineEdit_3")
-        self.chatroom = "X0X0"
+
         self.username_.setText("sabari")
         self.user_id_.setText('001')
 
@@ -73,7 +73,7 @@ class Window(QMainWindow):
         data = f'{self.username} : {text}'
         self.edit.clear()
         self.add_msg(data, 1)
-        self.client.Frame_POST(self.user_id, self.username, self.chatroom, text)
+        self.client.Frame_POST(self.user_id, self.username, text)
 
     # Makes a Frame/Layout/Label and Adds the ScrollArea
     def add_msg(self, msg, me=0):

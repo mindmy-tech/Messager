@@ -28,7 +28,6 @@ class Connect_Init:
         data = {'PROTOCOL': "POST",
                 'USER_ID': int(USER_ID),
                 'USERNAME': USERNAME,
-                'CHATROOM': CHATROOM,
                 "MESSAGE": MESSAGE}
         print(data)
         self.send_msg(data)
@@ -37,6 +36,5 @@ class Connect_Init:
         data = {'PROTOCOL': "POST",
                 'USER_ID': int(USER_ID),
                 'USERNAME': USERNAME,
-                'CHATROOM': CHATROOM,
                 "L_RECORD": L_RECORD}
         self.send_msg(data)
