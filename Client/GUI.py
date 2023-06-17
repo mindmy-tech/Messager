@@ -37,7 +37,7 @@ class Window(QMainWindow):
         self.thread = None
 
         # Loads .ui file
-        uic.loadUi('UI\\messager_v2.ui', self)
+        uic.loadUi('UI\\Editing.ui', self)
 
         # gets the widgets from file to modify the widget
         self.scroll_area = self.findChild(QScrollArea, "scrollArea")
@@ -49,21 +49,41 @@ class Window(QMainWindow):
         self.username_ = self.findChild(QLineEdit, "lineEdit_3")
         self.edit_name = self.findChild(QPushButton, "pushButton_2")
 
+        self.ip_label = self.findChild(QLabel, "label_2")
+        self.ip_connection = self.findChild(QLineEdit, "lineEdit_2")
+        self.connect_  = self.findChild(QPushButton, "pushButton_3")
+
+        self.chatroom_label = self.findChild(QLabel, "label") 
+
 
         self.assign_name()
         self.username_.setEnabled(False)
 
         self.username = self.username_.text()
+        self.enable_item(False)
         # Connecting button to a function
         self.edit_name.clicked.connect(self.change_state)
         self.button.clicked.connect(self.frame_msg)
-        # self.edit_name.clicked.connect(self.change_state)
 
-        # CONNECTION WITH SERVER
-        self.client = Client.Connect_Init()
+        self.connect_.clicked.connect(self.init_connection)
+    def enable_item(self, val):
+        if val:
+            self.chatroom_label.setText("Chatroom")
+        else:
+            self.chatroom_label.setText("Connection Pending ...")
+        
+        self.button.setEnabled(val)
+        self.edit.setEnabled(val)
 
+    def init_connection(self):
+        self.client = Client.Connect_Init(self.ip_connection.text())
+        self.enable_item(True)
         # Recv Thread
         self.Thread_init()
+        self.ip_connection.hide()
+        self.connect_.hide()
+        self.ip_label.hide()
+
     def change_state(self):
         is_enabled = self.username_.isEnabled()
         if  is_enabled:
