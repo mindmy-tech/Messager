@@ -30,7 +30,7 @@ Open Terminal / CMD and go to desired location and paste this
 
 #### Server Setup
 
-[x] Server 
-[ ] Client
+- [x] Server 
+- [ ] Client
 
 <!-- #### If its a Server  -->
