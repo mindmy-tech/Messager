@@ -17,3 +17,8 @@
 ### As ZIP File
 [Click Me To  Download](https://github.com/mindmy-tech/Messager/archive/refs/heads/main.zip)
 
+### Using Git 
+Open Terminal / CMD and go to desired location and paste this 
+
+`git clone https://github.com/mindmy-tech/Messager.git `
+
