@@ -1,23 +1,32 @@
-from cs50 import SQL as sql
+from cs50 import SQL
 
 
-class Protocols:
-
+class Protocol:
     def __init__(self):
+        """
+        checks if the db file exists or else
+        creates them"""
         try :
-            self.db = sql("sqlite:///messages.db")
+            self.db = SQL("sqlite:///messages.db")
+        
         except:
             open("messages.db", 'w')
-            self.db = sql("sqlite:///messages.db")
+            self.db = SQL("sqlite:///messages.db")
 
         self.init_db()
 
     def post_protocol(self, data):
+        """
+        INSERTS MSG INTO THE DB ON TABLE MESSAGES
+        """
         if data:
             query = " INSERT INTO messages(user_id, message ) values(?, ?)"
             self.db.execute(query, data["USERNAME"], data["MESSAGE"] )
 
     def get_protocol(self, data):
+        """
+        NOTE NOT IMPLEMENTED YET 
+        """
         if data:
             query = "SELECT user_id, message , msg_at FROM messages WHERE id > ? ORDER BY msg_at"
             value = self.db.execute(query, data["last_msg"])
@@ -26,6 +35,9 @@ class Protocols:
 
 
     def init_db(self):
+        """
+        Creates  table if it doent exists
+        """
 
         #  Users table
         #  to handle users data 
@@ -51,8 +63,11 @@ class Protocols:
         msg_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         );
         """
+
+        # Executes all the query
         querys = [query1, query2, query3]
 
         for query in querys:
             self.db.execute(query)
+
 
