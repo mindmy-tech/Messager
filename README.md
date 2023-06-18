@@ -22,3 +22,15 @@ Open Terminal / CMD and go to desired location and paste this
 
 `git clone https://github.com/mindmy-tech/Messager.git `
 
+---
+
+## After Downloading 
+
+#### Chose its a server or client 
+
+#### Server Setup
+
+[x] Server 
+[ ] Client
+
+<!-- #### If its a Server  -->
