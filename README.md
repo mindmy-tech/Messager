@@ -79,3 +79,23 @@ if this doen't work try **pip3** instead of **pip**
 ## And You Are all Set 
 
 ### If You Have any Query Mail Me At `education@mindmy.tech` or `contact@mindmy.tech`
+
+
+## Docs 
+
+### Sockes  
+
+Sockets provide the necessary framework for network 
+communication in our messaging application. so I used sockets 
+
+### Pyqt5
+
+PyQt5 is a powerful GUI toolkit for Python, offering a wide range of widgets and
+ tools to create visually appealing user interfaces. With PyQt5, we can design the layout of our messaging application, implement interactive features, and handle user interactions.
+
+I created the gui on pyqt5 designer and converted into a ui file 
+and in python i acessed it
+
+## Conclution
+
+Building a messaging application using Python, sockets, and PyQt5 allows us to create a versatile and feature-rich platform for seamless communication. With the power of Python, we can leverage sockets to establish network connections, enabling real-time messaging capabilities. PyQt5 enhances the user experience by providing an interactive and visually appealing graphical interface. 
