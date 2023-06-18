@@ -81,11 +81,14 @@ class Connect_Init:
     def Frame_GET(self,  USER_ID, USERNAME, L_RECORD=0):
         """
         Formating data to recive them
+
+        NOTE IT IS NOT USED BY THE PROGRAM YET 
+        IN NEXT IMPLEMENTATION IT WILL BE ADDED
         """
         data = {'PROTOCOL': "POST",
                 'USER_ID': int(USER_ID),
                 'USERNAME': USERNAME,
                 "L_RECORD": L_RECORD}
         self.send_msg(data)
-    
+
 
