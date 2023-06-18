@@ -28,7 +28,7 @@ Open Terminal / CMD and go to desired location and paste this
 
 > Chose its a *server* or *client* 
 
-> Server Setup
+ Server Setup
 
 - [x] Server 
 - [ ] Client
@@ -38,6 +38,7 @@ Open Terminal / CMD and go to desired location and paste this
 ### Open **Cmd / Terminal ** and navigate to your *location* 
 
 > Run these Comands Below
+
 `cd .\Server\`
 
 `pip install -r .\requirements.txt`
@@ -58,6 +59,7 @@ Open Terminal / CMD and go to desired location and paste this
 #### Open Cmd / Terminal 
 
 > Run these Comands Below
+
 `cd .\Client\`
 
 `pip install -r .\requirements.txt`
