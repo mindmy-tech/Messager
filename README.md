@@ -33,9 +33,9 @@ Open Terminal / CMD and go to desired location and paste this
 - [x] Server 
 - [ ] Client
 
-### In CMD
+> In CMD
 
-> Open **Cmd / Terminal ** and navigate to your *location* 
+### Open **Cmd / Terminal ** and navigate to your *location* 
 
 > Run these Comands Below
 `cd .\Server\`
