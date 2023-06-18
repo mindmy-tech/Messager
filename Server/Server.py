@@ -11,9 +11,11 @@ class Server_Init:
     """
     def __init__(self):
         self.sock = None
+        #  this will assign the avaible ip address
         self.host = ""
         self.port = 7080
         self.clients_ = {}
+        # initiates msg protocol
         self.protocol = msg_protocols.Protocols()
         self.startup_sequence()
 
@@ -21,6 +23,7 @@ class Server_Init:
         """
         Init server code
         """
+        # Bind ip and port 
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.sock.bind((self.host, self.port))
         print(f'server up @{self.host}:{self.port}')
@@ -28,6 +31,7 @@ class Server_Init:
         self.sock.listen()
         # Waiting for connections
         while True:
+            # waits for client and accepts the client
             conn, addr = self.sock.accept()
             self.clients_[addr] = conn
             print(f'total {self.clients_}')
@@ -43,7 +47,8 @@ class Server_Init:
 
     def listen_msg(self, conn, addr):
         """
-        waithing for message
+        waiting for message
+        and adds them to the database
         """
         while True:
             try:
