@@ -74,8 +74,8 @@ if this doen't work try **pip3** instead of **pip**
 
 ### You should type the host ip address
 
-### And click Connect 
+## And click Connect 
 
-# And You Are all Set 
+## And You Are all Set 
 
-##
+### If You Have any Query Mail Me At `education@mindmy.tech` or `contact@mindmy.tech`
