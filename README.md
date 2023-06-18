@@ -65,3 +65,12 @@ Run these Comands Below
 if this doen't work try **pip3** instead of **pip**
 
 `python .\GUI.py`
+
+--- 
+
+## After Opening GUI.py 
+
+### You should type the host ip address
+
+### And click Connect 
+
