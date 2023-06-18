@@ -16,7 +16,7 @@ class Server_Init:
         self.port = 7080
         self.clients_ = {}
         # initiates msg protocol
-        self.protocol = msg_protocols.Protocols()
+        self.protocol = msg_protocols.Protocol()
         self.startup_sequence()
 
     def startup_sequence(self):
