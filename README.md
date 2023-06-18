@@ -1,6 +1,6 @@
 # Messager
 
-## Hey I'm Sabari 
+## Hey I'm *Sabari* 
 
 ### I *Created* this appliction for my CS50x Final Project 
 
