@@ -35,14 +35,14 @@ Open Terminal / CMD and go to desired location and paste this
 
 ### In CMD
 
-Open **Cmd / Terminal ** and navigate to your *location* 
+> Open **Cmd / Terminal ** and navigate to your *location* 
 
 Run these Comands Below
 `cd .\Server\`
 
 `pip install -r .\requirements.txt`
 
-if this doen't work try **pip3** instead of **pip**
+>> if this doen't work try **pip3** instead of **pip**
 
 `python .\server.py`
 
@@ -74,3 +74,6 @@ if this doen't work try **pip3** instead of **pip**
 
 ### And click Connect 
 
+# And You Are all Set 
+
+##
