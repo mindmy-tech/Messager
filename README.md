@@ -26,11 +26,44 @@ Open Terminal / CMD and go to desired location and paste this
 
 ## After Downloading 
 
-#### Chose its a server or client 
+### Chose its a server or client 
 
 #### Server Setup
 
 - [x] Server 
 - [ ] Client
+
+### In CMD
+
+Open **Cmd / Terminal ** and navigate to your *location* 
+
+Run these Comands Below
+`cd .\Server\`
+
+`pip install -r .\requirements.txt`
+
+if this doen't work try **pip3** instead of **pip**
+
+`python .\server.py`
+
+
+## And now your server is running 
+
+
+### And Now For Client
+
+- [ ] Server 
+- [x] Client
+
+#### Open Cmd / Terminal 
+
+Run these Comands Below
+`cd .\Client\`
+
+`pip install -r .\requirements.txt`
+
+if this doen't work try **pip3** instead of **pip**
+
+`python .\client.py`
 
 <!-- #### If its a Server  -->
