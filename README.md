@@ -66,4 +66,4 @@ if this doen't work try **pip3** instead of **pip**
 
 `python .\client.py`
 
-<!-- #### If its a Server  -->
+
